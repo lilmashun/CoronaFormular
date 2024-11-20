@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corona-Stornierungsformular</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+
+<body>
+    <form action="#" method="post">
+        <fieldset>
+            <legend>Persönliche Daten</legend>
+            <label for="vorname">Vorname*</label>
+            <input type="text" id="vorname" name="vorname" required>
+
+            <label for="nachname">Nachname*</label>
+            <input type="text" id="nachname" name="nachname" required>
+
+            <label for="telefonnummer">Telefonnummer*</label>
+            <input type="tel" id="telefonnummer" name="telefonnummer" required>
+
+            <label for="email">E-Mailadresse*</label>
+            <input type="email" id="email" name="email" required>
+
+            <label>Wie sollen wir Sie kontaktieren?*</label>
+            <input type="radio" id="kontakt_tel" name="kontaktart" value="Telefon" required>
+            <label for="kontakt_tel">Telefon</label>
+            <input type="radio" id="kontakt_email" name="kontaktart" value="E-Mail" required>
+            <label for="kontakt_email">E-Mail</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Details zum Flug</legend>
+            <label for="buchungsnummer">Buchungsnummer*</label>
+            <input type="text" id="buchungsnummer" name="buchungsnummer" required>
+
+            <label for="abflughafen">Abflughafen*</label>
+            <select id="abflughafen" name="abflughafen" required>
+                <option value="Wien">Wien</option>
+                <option value="Graz">Graz</option>
+                <option value="Salzburg">Salzburg</option>
+                <option value="Innsbruck">Innsbruck</option>
+                <option value="Linz">Linz</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Stornogründe</legend>
+            <label>Warum möchten Sie stornieren?*</label>
+            <input type="checkbox" id="grund_corona" name="stornogrund" value="Corona erkrankt" required>
+            <label for="grund_corona">An Corona erkrankt</label>
+            <input type="checkbox" id="grund_warnung" name="stornogrund" value="Reisewarnung im Zielland" required>
+            <label for="grund_warnung">Reisewarnung im Zielland</label>
+            <input type="checkbox" id="grund_mag_nicht" name="stornogrund" value="Mag nicht mehr" required>
+            <label for="grund_mag_nicht">Mag nicht mehr</label>
+            <input type="checkbox" id="grund_andere" name="stornogrund" value="Anderer Grund" required>
+            <label for="grund_andere">Anderer Grund</label>
+
+            <label for="kommentar">Kommentar</label>
+            <textarea id="kommentar" name="kommentar" rows="4"></textarea>
+        </fieldset>
+
+        <button type="submit">Senden</button>
+    </form>
+</body>
+
+</html>
